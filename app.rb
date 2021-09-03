@@ -66,7 +66,15 @@ get '/tasks/new' do
 end
 
 post '/tasks' do
-    current_user.tasks.create(title: params[:title])
+    date = params[:due_date].split('-')
+    if Date.valid_date?(date[0].to_i, date[1].to_i, date[2].to_i)
+        current_user.tasks.create(
+            title: params[:title],
+            due_date: Date.parse(params[:due_date])
+        )
+    else
+        redirect '/tasks/new'
+    end
     redirect '/'
 end
 
