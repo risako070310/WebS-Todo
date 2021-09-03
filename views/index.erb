@@ -9,6 +9,15 @@
 			<% @tasks.each do |task| %>
 				<tr>
 					<td><%= CGI.escapeHTML(task.title) %></td>
+					<td>
+						<% unless task.completed %>
+							<form action="/tasks/<%= task.id %>/done" method="post">
+								<input type="submit" value="Done!">
+							</form>
+						<% else %>
+							Done!
+						<% end %>
+					</td>
 				</tr>
 			<% end %>
 			<tr>
