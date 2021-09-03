@@ -3,6 +3,7 @@
 		<thead>
 			<tr>
 				<th>タイトル</th>
+				<th>Done</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,6 +18,19 @@
 						<% else %>
 							Done!
 						<% end %>
+					</td>
+					<td>
+						<a href="/tasks/<%= task.id %>/star" style="
+							<% if task.star %>
+								background-color: red;
+							<% else %>
+								background-color: white;
+							<% end %>
+							border: 1px solid black;
+							width: 10px;
+							height: 10px;
+							display: block;
+						"></a>
 					</td>
 				</tr>
 			<% end %>
