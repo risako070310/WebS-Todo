@@ -1,4 +1,16 @@
 <div>
+	<div>
+		<div>
+			<ul>
+				<li><a href="/">トップ</a></li>
+				<li><a href="/tasks/done">Done</a></li>
+				<li><a href="/tasks/over">締め切り過ぎた</a></li>
+				<% @lists.each do |list| %>
+					<li><a href="/?list=<%= list.id %>"><%= list.name %></a></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 	<table>
 		<thead>
 			<tr>

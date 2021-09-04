@@ -20,6 +20,7 @@ before '/tasks' do
 end
 
 get '/' do
+    @lists = List.all
     if current_user.nil?
         @tasks = Task.none
     else
