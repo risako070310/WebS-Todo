@@ -1,12 +1,12 @@
-<div>
+<div class="container">
     <form action="/tasks/<%= @task.id %>" method="post">
-        <div>
-            <div>
-                <input type="text" name="title" placeholder="タイトル" value="<%= CGI.escapeHTML(@task.title) %>"><br>
-                <input type="text" name="due_date" placeholder="締切" value="<%= @task.due_date %>"><br>
+        <div class="controls">
+            <div class="form-group">
+                <input type="text" name="title" placeholder="タイトル" value="<%= CGI.escapeHTML(@task.title) %>" class="form-control input-lg"><br>
+                <input type="text" name="due_date" placeholder="締切" value="<%= @task.due_date %>" class="form-control input-lg"><br>
             </div>
             リスト:
-            <select name="list">
+            <select name="list" class="form-control">
                 <% List.all.each do |list| %>
                     <option value="<%= list.id %>" 
                         <% if list.id == @task.list.id %>
@@ -16,8 +16,8 @@
                     </option>
                 <% end %>
             </select>
-            <div>
-                <input type="submit" value="登録">
+            <div class="form-group">
+                <input class="form-control col-lg-4" type="submit" value="登録">
             </div>
         </div>
     </form>    

@@ -1,13 +1,13 @@
-<div>
-    <form action="/signup" method="post">
-        <div>
-            <div>
-                <input name="name" placeholder="名前を入力"><br>
-                <input name="password" type="password" placeholder="パスワードを入力"><br>
-                <input name="password_confirmation" type="password" placeholder="パスワードをもう一度入力"><br>
+<div class="container">
+    <form class="col-lg-5" action="/signup" method="post">
+        <div class="controls">
+            <div class="form-group">
+                <input class="form-control input-lg" name="name" placeholder="名前を入力"><br>
+                <input class="form-control input-lg" name="password" type="password" placeholder="パスワードを入力"><br>
+                <input class="form-control input-lg" name="password_confirmation" type="password" placeholder="パスワードをもう一度入力"><br>
             </div>
-            <div>
-                <input type="submit" value="登録">
+            <div class="form-group col-lg-4">
+                <input class="form-control col-lg-4" type="submit" value="登録">
             </div>
         </div>
     </form>
