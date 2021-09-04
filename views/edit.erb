@@ -1,0 +1,13 @@
+<div>
+    <form action="/tasks/<%= @task.id %>" method="post">
+        <div>
+            <div>
+                <input type="text" name="title" placeholder="タイトル" value="<%= CGI.escapeHTML(@task.title) %>"><br>
+                <input type="text" name="due_date" placeholder="締切" value="<%= @task.due_date %>"><br>
+            </div>
+            <div>
+                <input type="submit" value="登録">
+            </div>
+        </div>
+    </form>    
+</div>
